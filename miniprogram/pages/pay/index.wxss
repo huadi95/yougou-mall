@@ -12,9 +12,9 @@ page {
     width: 60%;
 }
 
-.address_show {
+.address_text {
     display: flex;
-    padding: 20rpx;
+    padding: 20rpx 20rpx 0rpx 20rpx;
 }
 
 .address_left {
@@ -24,6 +24,19 @@ page {
 .address_right {
     flex: 1;
     text-align: right;
+}
+
+.address_info_btn {
+    height: 80rpx;
+    padding: 20rpx 20rpx 26rpx 20rpx;
+}
+
+.address_info_btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
 }
 
 .cart_title {

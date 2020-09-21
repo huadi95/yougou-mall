@@ -1,0 +1,20 @@
+<!-- 收货地址 -->
+<view class="address_row">
+  <!-- 收货地址标题 -->
+  <view class="address_title">收货地址管理</view>
+  <!-- 收货地址信息 -->
+  <view class="address_show">
+    <view class="address_left">
+      <view>{{address.userName}}</view>
+      <view>{{address.all}}</view>
+    </view>
+    <view class="address_right">{{address.telNumber}}</view>
+  </view>
+  <!-- 修改收货地址 -->
+  <view class="address_btn" wx:if="{{address}}">
+    <button type="primary" plain bindtap="handleAddAddress">修改收货地址</button>
+  </view>
+  <view class="address_btn" wx:else>
+    <button type="primary" plain bindtap="handleAddAddress">添加收货地址</button>
+  </view>
+</view>

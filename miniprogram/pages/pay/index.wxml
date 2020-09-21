@@ -2,15 +2,20 @@
 <view class="cart_address_row">
   <!-- 当收货地址为空时，显示 -->
   <view class="address_btn" wx:if="{{!address.userName}}">
-    <button type="primary" plain bindtap="handleChooseAddress">获取收货地址</button>
+    <button type="primary" plain bindtap="handleChooseAddress">添加收货地址</button>
   </view>
   <!-- 当收货地址不为空时，显示 -->
-  <view class="address_show" wx:else>
-    <view class="address_left">
-      <view>{{address.userName}}</view>
-      <view>{{address.all}}</view>
+  <view class="address_info" wx:else>
+    <view class="address_text">
+      <view class="address_left">
+        <view>{{address.userName}}</view>
+        <view>{{address.all}}</view>
+      </view>
+      <view class="address_right">{{address.telNumber}}</view>
     </view>
-    <view class="address_right">{{address.telNumber}}</view>
+    <view class="address_info_btn">
+      <button type="primary" plain bindtap="handleChooseAddress">修改收货地址</button>
+    </view>
   </view>
 </view>
 <!-- 购物车内容 -->

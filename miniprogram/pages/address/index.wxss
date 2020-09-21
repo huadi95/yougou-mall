@@ -1,0 +1,36 @@
+/* miniprogram/pages/address/index.wxss */
+
+.address_btn {
+    padding: 20rpx;
+}
+
+.address_btn button {
+    width: 60%;
+}
+
+.address_show {
+    display: flex;
+    padding: 20rpx;
+}
+
+.address_show {
+    display: flex;
+    padding: 20rpx;
+}
+
+.address_left {
+    flex: 2;
+}
+
+.address_right {
+    flex: 1;
+    text-align: right;
+}
+
+.address_title {
+    color: var(--themeColor);
+    font-size: 36rpx;
+    padding: 20rpx;
+    border-top: 1rpx solid currentColor;
+    border-bottom: 1rpx solid currentColor;
+}

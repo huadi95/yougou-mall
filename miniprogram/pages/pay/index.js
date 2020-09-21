@@ -69,6 +69,7 @@ Page({
             //4.调用函数获取收货地址
             let address = await chooseAddress();
             address.all = address.provinceName + address.cityName + address.countyName + address.detailInfo;
+            //5.上传收货地址到本地存储
             wx.setStorageSync("address", address);
         } catch (error) {
             console.log(error)
