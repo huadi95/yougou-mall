@@ -36,7 +36,7 @@
 | 订单⻚ | order |
 | 订单详情⻚ | order_detail |
 | 意见反馈页 | feedback |
-| 结算⻚ | search |
+| 搜索⻚ | search |
 | 登录页 | login |
 | 授权页 | auth |
 | 结算⻚ | pay |
