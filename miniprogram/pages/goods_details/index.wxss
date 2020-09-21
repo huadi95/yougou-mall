@@ -1,0 +1,99 @@
+page {
+    padding-bottom: 90rpx;
+}
+
+.details_swiper swiper {
+    height: 65vw;
+    text-align: center;
+}
+
+.details_swiper swiper swiper-item image {
+    width: 60%;
+}
+
+.info_price {
+    color: var(--themeColor);
+    font-size: 32rpx;
+    padding: 15rpx;
+}
+
+.info_content {
+    display: flex;
+    padding-bottom: 15rpx;
+}
+
+.info_content_left {
+    flex: 5;
+    padding: 0 15rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.info_content_rigth {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1rpx solid #666;
+}
+
+.content-title {
+    padding: 20rpx;
+    font-size: 32rpx;
+    color: var(--themeColor);
+    font-weight: 600;
+    border-top: 16rpx solid #eee;
+    border-bottom: 16rpx solid #eee;
+}
+
+.icon-xingxing {
+    color: orangered;
+}
+
+.details_floor {
+    height: 90rpx;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    display: flex;
+    border-top: 1rpx solid #ccc;
+}
+
+.floor_item,
+.floor_item navigator {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    position: relative;
+}
+
+.floor_item button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.btn-cart {
+    flex: 2;
+    color: #fff;
+    font-size: 30rpx;
+    background-color: #ffa500;
+}
+
+.btn-buy {
+    flex: 2;
+    color: #fff;
+    font-size: 30rpx;
+    background-color: #eb4450;
+}

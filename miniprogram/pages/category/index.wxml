@@ -1,0 +1,35 @@
+<view class="cates">
+  <!-- 搜索框 开始 -->
+  <view class="search_input">
+    <SearchInput></SearchInput>
+  </view>
+  <!-- 搜索框 结束 -->
+  <!-- 商品数据 开始 -->
+  <view class="cates_group">
+    <!-- 商品列表 -->
+    <scroll-view scroll-y class="left_menu">
+      <view class="menu_list {{index === currentIndex ? 'active' : ''}}" wx:for="{{leftMenuList}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}">
+        {{item}}
+      </view>
+    </scroll-view>
+    <!-- 商品内容 -->
+    <scroll-view class="right_content" scroll-top="{{scrollTop}}" scroll-y>
+      <view class="content_group" wx:for="{{rightContentList}}" wx:for-item="item1" wx:for-index="index1" wx:key="*this">
+        <!-- 内容标题 -->
+        <view class="content_title">
+          <view class="slash">/</view>
+          <view class="title_list">{{item1.cat_name}}</view>
+          <view class="slash">/</view>
+        </view>
+        <!-- 内容数据 -->
+        <view class="content_list">
+          <navigator wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" wx:key="cat_id" url="/pages/goods_list/index?cid={{item2.cat_id}}">
+            <image src="{{item2.cat_icon}}" mode="widthFix"></image>
+            <view class="content_name">{{item2.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 商品数据 结束 -->
+</view>

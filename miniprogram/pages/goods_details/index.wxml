@@ -1,0 +1,55 @@
+<!-- 商品详情轮播图 开始 -->
+<view class="details_swiper">
+  <swiper autoplay circular indicator-dots>
+    <swiper-item wx:for="{{goodsData.pics}}" wx:key="pics_id" bindtap="handlePreviewImage" data-url="{{item.pics_mid}}">
+      <image src="{{item.pics_mid}}" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 商品详情轮播图 结束 -->
+<!-- 商品详情信息 开始 -->
+<view class="details_info">
+  <view class="info_price">￥{{goodsData.goods_price}}</view>
+  <view class="info_content">
+    <view class="info_content_left">{{goodsData.goods_name}}</view>
+    <view class="info_content_rigth" bindtap="handleCollect">
+      <text class="iconfont {{isCollect?'icon-xingxing':'icon-shoucang'}}"></text>
+      <text>收藏</text>
+    </view>
+  </view>
+</view>
+<!-- 商品详情信息 结束 -->
+<!-- 商品详情图文详情 开始 -->
+<view class="details_content">
+  <view class="content-title">图文详情</view>
+  <view class="content-introduce">
+    <rich-text nodes="{{goodsData.goods_introduce}}"></rich-text>
+  </view>
+</view>
+<!-- 商品详情图文详情 结束 -->
+<!-- 商品详情的底部购物车 开始 -->
+<view class="details_floor">
+  <view class="floor_item">
+    <navigator url="/pages/index/index" open-type="switchTab">
+      <text class="iconfont  icon-shouye"></text>
+      <text>首页</text>
+    </navigator>
+  </view>
+  <view class="floor_item">
+    <text class="iconfont icon-kefu"></text>
+    <text>客服</text>
+    <button open-type="contact"></button>
+  </view>
+  <view class="floor_item">
+    <text class="iconfont icon-fenxiang"></text>
+    <text>分享</text>
+    <button open-type="share"></button>
+  </view>
+  <navigator open-type="switchTab" url="/pages/cart/index" class="floor_item">
+    <text class="iconfont icon-gouwuche"></text>
+    <text>购物车</text>
+  </navigator>
+  <view class="floor_item btn-cart" bindtap="handleCartAdd">加入购物车</view>
+  <view class="floor_item btn-buy" bindtap="handleBuy">立即购买</view>
+</view>
+<!-- 商品详情的底部购物车 结束 -->

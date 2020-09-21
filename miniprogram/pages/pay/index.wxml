@@ -1,0 +1,53 @@
+<!-- 收货地址 -->
+<view class="cart_address_row">
+  <!-- 当收货地址为空时，显示 -->
+  <view class="address_btn" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="handleChooseAddress">获取收货地址</button>
+  </view>
+  <!-- 当收货地址不为空时，显示 -->
+  <view class="address_show" wx:else>
+    <view class="address_left">
+      <view>{{address.userName}}</view>
+      <view>{{address.all}}</view>
+    </view>
+    <view class="address_right">{{address.telNumber}}</view>
+  </view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content_row">
+  <!-- 购物车标题 -->
+  <view class="cart_title">支付订单信息</view>
+  <!-- 购物车信息 -->
+  <view class="cart_info_warp">
+    <!-- 商品数据 -->
+    <view class="cart_info" wx:for="{{cart}}" wx:key="goods_id">
+      <!-- 商品图片 -->
+      <navigator class="cart_info_img" url="/pages/goods_details/index?goods_id={{item.goods_id || item.pics[0].goods_id}}">
+        <image src="{{item.goods_small_logo || item.pics[0].pics_sma || '../../lib/img/img-undefind.jpg'}}" mode="widthFix"></image>
+      </navigator>
+      <!-- 商品文字 -->
+      <view class="cart_info_text">
+        <view class="cart_info_text_top">{{item.goods_name}}</view>
+        <view class="cart_info_text_bottom">
+          <view class="cart_info_text_bottom_price">￥{{item.goods_price}}</view>
+          <view class="cart_info_text_bottom_num">
+            <view class="num">x{{item.num || 1}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+  <!-- 总价格 -->
+  <view class="total_price_warp">
+    <view class="total_price">
+      价格：
+      <text>￥{{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order_pay_warp" bindtap="handleOrderPay">支付({{totalNum}})</view>
+</view>

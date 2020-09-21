@@ -1,0 +1,38 @@
+/* pages/order/index.wxss */
+
+.order_item {
+    border-bottom: 1rpx solid #ccc;
+    padding: 20rpx;
+}
+
+.order_no_row,
+.order_price_row,
+.order_time_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rpx 0;
+}
+
+.order_peice_value {
+    color: var(--themeColor);
+    font-size: 32rpx;
+}
+
+.pay {
+    height: 60rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pay button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    margin: 0;
+}
+
+image {
+    margin-top: 50rpx;
+}

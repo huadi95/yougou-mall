@@ -1,0 +1,63 @@
+<!-- 购物车内容 -->
+<view class="cart_content_row">
+  <!-- 购物车标题 -->
+  <view class="cart_title">购物车</view>
+  <!-- 购物车信息 -->
+  <view class="cart_info_warp">
+    <!-- 当商品数据的长度为零时显示 -->
+    <block wx:if="{{cart.length==0}}">
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599651415044&di=ed948b7e111bededc451607f00d853e3&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix"></image>
+    </block>
+    <!-- 当商品数据的长度不为零时显示 -->
+    <block wx:else>
+      <view class="cart_info" wx:for="{{cart}}" wx:key="goods_id">
+        <!-- 商品选中按钮 -->
+        <view class="cart_info_checked">
+          <checkbox-group bindchange="handleItemChange" data-id="{{item.goods_id}}">
+            <checkbox checked="{{item.checked}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 商品图片 -->
+        <navigator class="cart_info_img" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+          <image src="{{item.goods_small_logo || '../../lib/img/img-undefind.jpg'}}" mode="widthFix"></image>
+        </navigator>
+        <!-- 商品文字 -->
+        <view class="cart_info_text">
+          <view class="cart_info_text_top">{{item.goods_name}}</view>
+          <view class="cart_info_text_bottom">
+            <view class="cart_info_text_bottom_price">￥{{item.goods_price}}</view>
+            <view class="cart_info_text_bottom_num">
+              <view class="edit" bindtap="handleEdit" data-operation="{{-1}}" data-id="{{item.goods_id}}">
+                -
+              </view>
+              <view class="num">{{item.num}}</view>
+              <view class="edit" bindtap="handleEdit" data-operation="{{1}}" data-id="{{item.goods_id}}">
+                +
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+  <!-- 全选按钮 -->
+  <view class="all_checked">
+    <checkbox-group bindchange="handleItemAllChange">
+      <checkbox checked="{{allChecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <view class="del_checked" bindtap="handelDelChecked">删除</view>
+  <!-- 总价格 -->
+  <view class="total_price_warp">
+    <view class="total_price">
+      价格：
+      <text>￥{{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order_pay_warp" bindtap="handlePay">结算({{totalNum}})</view>
+</view>

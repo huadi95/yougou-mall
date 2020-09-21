@@ -1,0 +1,134 @@
+/* pages/user/index.wxss */
+
+page {
+    background-color: #edece8;
+}
+
+.user_info_warp {
+    height: 45vh;
+    background-color: var(--themeColor);
+    overflow: hidden;
+    position: relative;
+}
+
+.user_info {
+    position: relative;
+}
+
+.user_bg {
+    height: 48vh;
+    width: 104vw;
+    margin-left: -2vw;
+    text-align: center;
+    filter: blur(10rpx);
+}
+
+.user_info_content {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.user_img {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.user_name {
+    color: #fff;
+    font-size: 40rpx;
+    margin-top: 40rpx;
+}
+
+.user_info_login {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    color: greenyellow;
+    border: 1rpx solid greenyellow;
+    padding: 30rpx;
+    font-size: 38rpx;
+    border-radius: 10rpx;
+}
+
+.user_content_warp {
+    position: relative;
+}
+
+.user_main {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+    width: 90%;
+}
+
+.history_warp {
+    background-color: #fff;
+    display: flex;
+}
+
+.history_warp navigator {
+    flex: 1;
+    text-align: center;
+    padding: 10rpx 0;
+}
+
+.his_num {
+    color: var(--themeColor)
+}
+
+.order_warp {
+    background-color: #fff;
+    margin-top: 30rpx;
+}
+
+.order_title {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+
+.order_content {
+    display: flex;
+}
+
+.order_content navigator {
+    flex: 1;
+    padding: 15rpx 0;
+    text-align: center;
+}
+
+.iconfont {
+    color: var(--themeColor)
+}
+
+.address_warp {
+    background-color: #fff;
+    margin-top: 30rpx;
+    padding: 20rpx;
+}
+
+.app_info_warp {
+    background-color: #fff;
+    margin-top: 30rpx;
+}
+
+.app_info_item {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+
+.app_info_sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend_warp {
+    background-color: #fff;
+    margin-top: 30rpx;
+    padding: 20rpx;
+    margin-bottom: 80rpx;
+}

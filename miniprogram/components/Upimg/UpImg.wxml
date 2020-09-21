@@ -1,0 +1,4 @@
+<view class="up_img_row">
+  <image src="{{src}}" mode="widthFix"></image>
+  <icon type="clear" color="red"></icon>
+</view>

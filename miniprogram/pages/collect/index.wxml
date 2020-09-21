@@ -1,0 +1,33 @@
+<!-- 商品收藏 开始 -->
+<tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <view>
+    <!-- 当收藏商品的数组为0是隐藏 -->
+    <block wx:if="{{collect.length !== 0}}">
+      <view class="collect_main">
+        <view class="collect_title">
+          <text class="collect_title_name active">全部</text>
+          <text class="collect_title_name">正在热卖</text>
+          <text class="collect_title_name">即将上线</text>
+        </view>
+        <view class="collect_content">
+          <navigator class="goods_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+            <!-- 左侧视图容器 -->
+            <view class="goods_img_warp">
+              <image src="{{item.goods_small_logo?item.goods_small_logo:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599318832357&di=408ff6cbaabce288144885e421b12bb6&imgtype=0&src=http%3A%2F%2Fimg.9553.com%2Fuploadfile%2F2016%2F0330%2F20160330063414501.jpg'}}" mode="widthFix"></image>
+            </view>
+            <!-- 右侧视图容器 -->
+            <view class="goods_info_warp">
+              <view class="goods_name">{{item.goods_name}}</view>
+              <view class="goods_price">${{item.goods_price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </block>
+    <!-- 当收藏商品的数组为0是显示 -->
+    <block wx:else>
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599990761476&di=5ce9a732c83434f32a6bc404d84be334&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F18%2F11%2F27%2Fe5bb1d48880b48f6da07e22812d5acb1.jpg" mode="widthFix"></image>
+    </block>
+  </view>
+</tabs>
+<!-- 商品收藏 结束 -->

@@ -1,0 +1,48 @@
+<!-- 订单内容 -->
+<view class="cart_content_row">
+  <!-- 订单标题 -->
+  <view class="cart_title">订单详情信息</view>
+  <!-- 订单信息 -->
+  <view class="order_info">
+    <!-- 订单编号 -->
+    <view class="order_number">订单编号：{{orderGoodsList.order_number}}</view>
+    <!-- 收货地址 -->
+    <view class="order_address">收货地址：{{orderGoodsList.address.all}}</view>
+    <!-- 收货人姓名 -->
+    <view class="order_address">收货人姓名：{{orderGoodsList.address.userName}}</view>
+    <!-- 订单时间 -->
+    <view class="order_address">订单时间：{{orderGoodsList.order_time}}</view>
+    <!-- 总价格 -->
+    <view class="order_address">总价格：￥{{orderGoodsList.order_price}}</view>
+    <!-- 订单状态 -->
+    <view class="order_status">
+      订单状态：
+      <view wx:if="{{orderGoodsList.type == 3}}">已付款</view>
+      <view class="order-pay" wx:else>
+        未付款
+        <button plain type="primary" bindtap="handleOrderPay">支付</button>
+      </view>
+    </view>
+  </view>
+  <!-- 订单商品信息 -->
+  <view class="cart_info_warp">
+    <view class="cart_title">订单商品信息</view>
+    <!-- 商品数据 -->
+    <view class="cart_info" wx:for="{{orderGoodsList.order_arr}}" wx:key="goods_id">
+      <!-- 商品图片 -->
+      <navigator class="cart_info_img" url="/pages/goods_details/index?goods_id={{item.goods_id || item.pics[0].goods_id}}">
+        <image src="{{item.goods_small_logo || item.pics[0].pics_sma || '../../lib/img/img-undefind.jpg'}}" mode="widthFix"></image>
+      </navigator>
+      <!-- 商品文字 -->
+      <view class="cart_info_text">
+        <view class="cart_info_text_top">{{item.goods_name}}</view>
+        <view class="cart_info_text_bottom">
+          <view class="cart_info_text_bottom_price">￥{{item.goods_price}}</view>
+          <view class="cart_info_text_bottom_num">
+            <view class="num">x{{item.num || 1}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<!-- 订单内容 开始 -->
+<tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <view class="order_main">
+    <!-- 订单数组为空时隐藏 -->
+    <block wx:if="{{orderData.length !== 0}}">
+      <!-- 每个订单信息 -->
+      <view class="order_item" wx:for="{{orderData}}" wx:key="order_number">
+        <navigator url="/pages/order_detail/index?order_number={{item.order_number}}&type={{isType}}">
+          <!-- 每个订单的编号 -->
+          <view class="order_no_row">
+            <view class="order_no_text">订单编号</view>
+            <view class="order_no_value">{{item.order_number}}</view>
+          </view>
+          <!-- 每个订单的价格 -->
+          <view class="order_price_row">
+            <view class="order_peice_text">订单价格</view>
+            <view class="order_peice_value">￥{{item.order_price}}</view>
+          </view>
+          <!-- 每个订单的时间 -->
+          <view class="order_time_row">
+            <view class="order_time_text">订单日期</view>
+            <view class="order_time_value">{{item.order_time}}</view>
+          </view>
+          <!-- 订单为待付款时显示 -->
+          <view class="pay" wx:if="{{item.type === 2}}" catchtap="handleButtonChange" data-number="{{item.order_number}}" data-type="{{isType}}">
+            <button plain type="primary">付款</button>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <!-- 订单数组为空时显示 -->
+    <block wx:else>
+      <image src="../../lib/img/order-undefind.jpg" mode="widthFix"></image>
+    </block>
+  </view>
+</tabs>
+<!-- 订单内容 结束 -->

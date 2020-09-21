@@ -1,0 +1,59 @@
+/* pages/collect/index.wxss */
+
+.collect_main {
+    background-color: #f3f4f6;
+}
+
+.collect_title {
+    padding: 30rpx 0 40rpx 0;
+}
+
+.collect_title_name {
+    padding: 15rpx;
+    border: 1rpx solid #ccc;
+    margin-left: 20rpx;
+    background-color: #fff;
+}
+
+.active {
+    color: var(--themeColor);
+    border-color: currentColor;
+}
+
+.goods_item {
+    display: flex;
+    background-color: #fff;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.goods_img_warp {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goods_img_warp image {
+    width: 70%;
+}
+
+.goods_info_warp {
+    flex: 3;
+    height: 190rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.goods_info_warp .goods_name {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: black;
+}
+
+.goods_info_warp .goods_price {
+    color: var(--themeColor);
+    font-size: 32rpx;
+}

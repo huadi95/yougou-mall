@@ -1,0 +1,56 @@
+<view class="goods_list">
+  <!-- 搜索框 开始 -->
+  <view class="search_input">
+        <SearchInput class="test"></SearchInput>
+  </view>
+  <!-- 搜索框 结束 -->
+  <!-- 商品内容 开始 -->
+  <tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tab">
+        <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+          <!-- 左侧视图容器 -->
+          <view class="goods_img_warp">
+            <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1820939238,2677153117&fm=26&gp=0.jpg'}}" mode="widthFix"></image>
+          </view>
+          <!-- 右侧视图容器 -->
+          <view class="goods_info_warp">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+      <view class="first_tab">
+        <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+          <!-- 左侧视图容器 -->
+          <view class="goods_img_warp">
+            <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1820939238,2677153117&fm=26&gp=0.jpg'}}" mode="widthFix"></image>
+          </view>
+          <!-- 右侧视图容器 -->
+          <view class="goods_info_warp">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+      <view class="first_tab">
+        <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+          <!-- 左侧视图容器 -->
+          <view class="goods_img_warp">
+            <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1820939238,2677153117&fm=26&gp=0.jpg'}}" mode="widthFix"></image>
+          </view>
+          <!-- 右侧视图容器 -->
+          <view class="goods_info_warp">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </tabs>
+  <!-- 商品内容 结束 -->
+</view>
